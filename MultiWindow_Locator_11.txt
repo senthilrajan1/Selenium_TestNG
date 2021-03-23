@@ -1,0 +1,28 @@
+
+
+import java.util.Iterator;
+import java.util.Set;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultipleWindow {
+
+	public static void main(String[] args) {
+
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\Senthil\\Selenium Tutorial\\ChromeDriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice");
+		driver.switchTo().newWindow(WindowType.TAB);
+		
+		Set <String> handle = driver.getWindowHandles();
+		Iterator <String> it = handle.iterator();
+		String parentid = it.next();
+		String childid = it.next();
+		driver.switchTo().window(childid);
+		System.out.println(driver.getTitle());
+		driver.get("https://rahulshettyacademy.com/");
+	}
+
+}

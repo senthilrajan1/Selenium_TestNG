@@ -1,0 +1,94 @@
+
+<input value ="Log In" tabindex='4' data-testid="royal_login_button" id="u_0_2" type = "submit">
+
+input -- TagName
+Attributes  -- class
+value --- input text
+
+name == attribute
+email == value
+
+//tagName[@attribute='value']
+
+//input [@value = 'Log In']
+
+//*[@type='email']
+
+
+
+//*[@id="pass"]
+
+
+
+
+
+Every object may not have ID, className or name -Xpath and CSS preferred
+Alpha numeric id may vary on every refresh-check
+Confirm the link object with anchor "a" tag
+Classes should not have spaces-Compound classes cannot be accepted
+Multiple values - Selenium identifies the first one-Scans from top left
+Double quotes inside double quotes are not accepted
+Xpath/CSS can be defined in n number of ways
+Rightclick copy on blue hightlighted html code to generate xpath
+Firepath depreciated from firefox.
+when xpath starts with html-Not reliable-Switch browser to get another one
+There is no direct way to get CSS in chrome. You will find it in tool bar
+Degrade browser to less firefox 55 to get Firepath
+$("") - for css, $x("") or xpath
+
+//tagName [@attribute ='value'] - xpath syntax
+
+
+
+
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Facebook
+
+{
+public static void main (String[] args) 
+{
+System.setProperty ("webdriver.chrome.driver", "C://work//chromedriver.exe");
+WebDriver driver = new ChromeDriver();
+
+driver.get("http://www.facebook.com");
+driver.findElement(By.className("inputtext")).sendKeys("hello world"));
+driver.findElement(By.id ("email")).sendKeys("This is my first code ");
+driver.findElement(By.name("pass")).sendKeys("1234543");
+driver.findElement(By.linkText("Forgot account")).click();
+
+///// tagName[@attribute='value']  -- xpath
+
+driver.findElement (By.xpath("//*[@type='email'])).sendKeys("emailaddress");       ------ xpath
+driver.findElement(By.xpath("//*[@id='pass']")).sendKeys("password");                  ------ xpath
+driver.findElement(By.xpath("//*[@value='Log In']")).click();		                 ------ xpath
+
+
+tagName[attribute='value'] --- CSS
+
+driver.findElement (By.cssSelector("input[name='email']")).sendKeys("emailaddress");  ----- CSS
+driver.findElement (By.cssSelector("[value='Log In']")).click();   		         ------ CSS
+
+tagName[attribute='value']   --- CSS
+tagName#id   --- CSS
+tagname.classname   --- CSS
+
+
+
+Regular expression  --- 
+//tagName{@contains(attribute, 'value')]  ---- xpath
+//input[contains (@name, 'username')]    ---- xpath (example)
+
+
+tagName[Attribute*='value']   --- Css Regular expression 
+
+input [name*='username']    ---- Css Regular expression (example)
+
+Parent - child relationship xpath  - Define xpath for parent/tagnames
+
+
+
+
+

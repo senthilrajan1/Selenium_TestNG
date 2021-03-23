@@ -1,0 +1,12 @@
+
+
+
+xPath is how we move to that specific point..we are jumpting towards the point.
+
+When we are finding the child path and not going to Parent node and directly moving towards Child path, then it will be Relative xPath.
+
+Relative xPath -- Doesn't depend on Parend nodes.
+Absolute xPath -- Have to travel from Parent node to the last child node to find the path of the element.
+
+
+Relative xPath is more 

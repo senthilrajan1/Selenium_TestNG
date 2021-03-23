@@ -1,0 +1,62 @@
+
+Selenium Grid:
+
+Selenium Grid allows to run tests on different machines against different browsers.
+
+It supports distributed test execution
+
+ We can run the Tests in parallel in Multiple machines on Selenium Grid.
+
+
+What is Hub?
+
+Hub is the central point that will receive all the test request and distribute them the to the right nodes.
+
+There should be only one hub in a grid.
+
+Machine containing the Hub is where the tests will be triggered, but will see the browser being automated on the node.
+
+
+
+
+Node: 
+Nodes are the Selenium instances that will execute the tests that loaded on the Hub. Nodes can be launched on multiple machines with different platforms and browsers.
+
+
+C:\Senthil\Selenium Shankar Training\Selenium Tutorial
+
+java -jar selenium-server-standalone-3.12.0.jar -role hub
+
+
+
+
+java -jar selenium-server-standalone-3.141.59.jar -role webdriver -hub
+ 
+#################################################################################
+
+Step 1:
+
+"Starting a HUB"
+
+java -jar selenium-server-standalone-3.141.59.jar -role hub
+
+
+
+Step 2:
+
+http://192.168.1.11:4444/grid/console
+
+Step 3:
+
+Connect to the Node with following command
+
+
+C:\> java -jar selenium-server-standalone-3.141.59.jar -role webdriver -hub http://192.168.1.11:4444/grid/register -port 5566
+
+Step 4:
+
+Need to add the chrome driver which helps to configure with the Node. So Need to change the command line in Node.
+
+
+C:/> java -Dwebdriver.chrome.driver="C:\SenthilSelenium\Drivers\chromedriver" jar selenium-server-standalone-3-141.59.jar -role webdriver -hub http:\\192.168.1.11:4444/grid/register -port 5566
+

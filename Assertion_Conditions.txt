@@ -1,0 +1,31 @@
+
+
+Calendar 
+
+Assert.assertFalse(false);
+
+Assert.assertTrue(true);
+
+Assert.assertEquals(actual,expected);
+
+
+Assertion is a TestNG function in which Assert.assertFalse(false) which means that the condition should fail and it should allow to proceed the further code..if the code gets True, when the code will stop and not allow to proceed.
+
+
+Assert.assertTrue(true) which says that the condition should pass and allow to proceed to the next line of code. if the code fails, then the code will not move further.
+
+
+Assert.assertEquals(actual, expected) which shows that the Assertion condition shows both the actual condition and the expected result.
+
+But if the actual conditon is different than the expected result., it will show in the result tht actual and expected value.
+
+Calendar 
+if (driver.findElement(By.id("Div1")).getAttribute("style").contains("1"))
+{
+system.out.println("Button is enabled");
+Assert.assertTrue(true);
+}
+else
+System.out.println("Button is disabled");
+
+

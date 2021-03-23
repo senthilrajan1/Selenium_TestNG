@@ -1,0 +1,41 @@
+
+
+
+
+Step1 : Sent this parameters from Maven command instead of writing it from data.properties
+Step2 :  
+//mvn test -Dbrowser=chrome ---> if we update this in the command prompt to execute through Maven. Maven will get the browser value setted as chrome (as -Dbrowser) indicates which browser to get it directed through Maven.
+Maven usually takes all the properties (.Dbrowser) as system properties.
+
+String browserName = System.getProperty("browser");
+
+
+String browserValue = System.getProperty("browser");
+
+
+
+ <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+        <forkCount>0</forkCount>
+          <suiteXmlFiles>
+         <suiteXmlFile>testng.xml</suiteXmlFile>
+          </suiteXmlFiles>
+        </configuration>
+      </plugin>
+
+
+ <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <configuration>
+        <useSystemClassLoader>false</useSystemClassLoader>
+    </configuration>
+</plugin>
+
+
+
+Error resolving version for plugin 'org.apache.maven.plugins:null' from the repositories [local (C:\Users\lenovo\.m2\repository), central (https://repo.maven.apache.org/maven2)]: Plugin not found in any plugin repository
+

@@ -1,0 +1,77 @@
+
+
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+
+public class MultiWindow_Trainer 
+{
+	
+	public static void main(String[] args)
+	{
+	System.setProperty("webdriver.chrome.driver", "C:\\Senthil\\Selenium Tutorial\\ChromeDriver.exe");
+	WebDriver driver = new ChromeDriver();
+	driver.get("https://www.rahulshettyacademy.com/angularpractice/");
+	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+    System.out.println(driver.getTitle());
+
+    driver.switchTo().newWindow(WindowType.TAB);
+    
+    driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
+    Set<String> handles = driver.getWindowHandles();
+
+    Iterator<String> it = handles.iterator();
+    String parentWindow = it.next();
+    String childWindow = it.next();
+    driver.switchTo().window(childWindow);
+    
+    driver.get("https://www.rahulshettyacademy.com/#/index");
+    
+   String courseName = driver.findElements(By.cssSelector("a[href*='https://courses.rahulshettyacademy.com/p/core-java-for']")).get(1).getText();
+   //CourseTitle = driver.findElement(By.xpath("div[1]/h2//a[text()='Core java for Automation Testers + Interview Programs']"));
+   
+   driver.switchTo().window(parentWindow);
+   driver.findElement(By.cssSelector("input[name='name']")).sendKeys(courseName);
+
+   driver.quit();
+
+	}
+	
+
+}
+		
+
+___________________________________________________________________________________
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class MultiWindow_Locator {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver", "C:\\Senthil\\Selenium Tutorial\\ChromeDriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/angularpractice/");
+		driver.switchTo().newWindow(WindowType.TAB);
+		
+		Set <String> handle = driver.getWindowHandles();
+		Iterator <String> it = handle.iterator();
+		String parentid = it.next();
+		String childid = it.next();
+		driver.switchTo().window(childid);
+		System.out.println(driver.getTitle());
+		driver.get("https://rahulshettyacademy.com/");
+	}
+
+}

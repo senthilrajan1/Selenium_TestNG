@@ -1,0 +1,26 @@
+
+
+
+	List<WebElement> elementsList = driver.findElements(By.xpath("//tr/td[1]"));
+		// capture text of all webelements into new(original) list
+	List<String> OriginalList = elementsList.stream().map(s -> s.getText()).collect(Collectors.toList());
+		// sort on the original list of step 3 -> sorted list
+	List<String> SortedList = elementsList.stream().map(d->d.getText()).sorted().collect(Collectors.toList());
+			//	.stream().sorted().collect(Collectors.toList());
+		// compare original list vs sorted list
+
+	Assert.assertTrue(OriginalList.equals(SortedList));
+	System.out.println("OriginalList is " + OriginalList);
+	System.out.println("SortedList is " + SortedList);
+
+
+	/*	
+		driver.findElement(By.xpath("//div[@class='cart'] //a[2]")).click();
+			
+		Set<String> ids = driver.getWindowHandles();
+		Iterator<String> it = ids.iterator();
+		String parentid = it.next();
+		String childid = it.next();
+		driver.switchTo().window(childid);
+		System.out.println(driver.getTitle());
+		*/

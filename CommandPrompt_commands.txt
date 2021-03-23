@@ -1,0 +1,29 @@
+Commandprompt
+
+
+C:\Senthil\Selenium Shankar Training\Selenium Tutorial> dir
+
+dir --to List the files in the particular directory
+
+
+C:\Senthil\Selenium Shankar Training\Selenium Tutorial>type <FileName>.txt
+
+it shows the contents in the particular file
+
+
+C:\Senthil\Selenium Shankar Training\Selenium Tutorial>dir <FolderName>
+
+
+It shows the files in the particular folder
+
+
+mkdir <Filename> -- to create a directory in the file name
+
+move <source file> <Destination file>
+
+to Move the file from source file to destination file
+
+
+java –jar Jenkins.war –httpPort-8080 (or 9090)
+
+$(JENKINS_HOME)/Mavenjava

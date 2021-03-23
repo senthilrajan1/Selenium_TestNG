@@ -1,0 +1,23 @@
+<suite
+
+rahulonlinetutor@gmail.com
+
+ <test thread-count="5" name="Test">
+    <classes>
+      <class name="TestNG.TestCase1"/>
+      <class name="TestNG.TestCase2"/>
+      <class name="TestNG.TestCase3"/>
+      <class name="TestNG.TestCase4"/>
+    </classes>
+    
+  </test>
+
+
+ <test thread-count="5" name="Test">
+    <classes>
+      <class name="TestNG.TestCase1"/>
+      <class name="TestNG.TestCase2"/>
+      <class name="TestNG.TestCase3"/>
+      <class name="TestNG.TestCase4"/>
+    </classes>
+  </test>
